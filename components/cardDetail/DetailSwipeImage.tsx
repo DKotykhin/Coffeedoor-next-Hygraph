@@ -8,7 +8,9 @@ import "swiper/css/effect-cube";
 import "swiper/css/pagination";
 
 interface IDetailSwipeImage {
-    img: Array<{url: string}>;
+    img: {
+        url: string
+    }[];
     alt: string
 }
 

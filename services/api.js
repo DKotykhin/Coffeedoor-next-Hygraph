@@ -95,6 +95,45 @@ export const GetAllList = async() => {
                 }
             }
         }
+        jamList: jamListsConnection(orderBy: position_ASC, where: {hide_not: true}) {
+            edges {
+                node {
+                bodyUa {
+                    title
+                    name
+                    description
+                    tm
+                    country
+                }
+                bodyRu {
+                    title
+                    name
+                    description
+                    tm
+                    country
+                }
+                bodyEn {
+                    title
+                    name
+                    description
+                    tm
+                    country
+                }            
+                id
+                weight
+                price
+                order
+                hide
+                position
+                cardImg {
+                    url
+                }
+                listImg {
+                    url
+                }
+                }
+            }
+        }
     }`
     const result = await request(graphqlAPI, query)
     return result

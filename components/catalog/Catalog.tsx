@@ -45,16 +45,16 @@ const Catalog: React.FC<ICatalog> = ({ cataloglist }) => {
                 title={t("tea_title")}
                 subtitle={t("tea_subtitle")}
             />
-            {/* <ItemList
-                props={cataloglist?.jamlist}                
-                i={i}                
+            <ItemList
+                props={cataloglist.jamList.edges}                
+                lang={router.locale}                
                 id={"jam_list"}
                 title={t("jam_title")}
                 subtitle={t("jam_subtitle")}
             />
-            <ItemList
+            {/* <ItemList
                 props={cataloglist?.millslist}                
-                i={i}                
+                lang={router.locale}                
                 id={"mills_list"}
                 title={t("mills_title")}
                 subtitle={t("mills_subtitle")}
