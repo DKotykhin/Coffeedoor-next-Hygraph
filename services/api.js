@@ -1,6 +1,8 @@
-import { request, gql } from 'graphql-request';
+import { request, gql, GraphQLClient } from 'graphql-request';
 
 const graphqlAPI = process.env.NEXT_PUBLIC_HYGRAPH_URL;
+
+const hygraph = new GraphQLClient(graphqlAPI);
 
 export const GetAllList = async() => {
     const query = gql `
@@ -135,6 +137,6 @@ export const GetAllList = async() => {
             }
         }
     }`
-    const result = await request(graphqlAPI, query)
+    const result = await hygraph.request(query)
     return result
 }
