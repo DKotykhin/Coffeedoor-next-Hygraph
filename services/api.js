@@ -7,7 +7,7 @@ const hygraph = new GraphQLClient(graphqlAPI);
 export const GetCatalogList = async() => {
     const query = gql `
     query GetAllList {
-        coffeeList: coffeeListsConnection(orderBy: position_ASC, where: {hide_not: true}) {
+        coffeeList: coffeeListsConnection(orderBy: position_ASC, where: {hide_not: true}, first: 20) {
             edges {
                 node {
                     bodyUa {
@@ -46,7 +46,7 @@ export const GetCatalogList = async() => {
                 }
             }
         }
-        teaList: teaListsConnection(orderBy: position_ASC, where: {hide_not: true}) {
+        teaList: teaListsConnection(orderBy: position_ASC, where: {hide_not: true}, first: 20) {
             edges {
                 node {
                     bodyUa {
