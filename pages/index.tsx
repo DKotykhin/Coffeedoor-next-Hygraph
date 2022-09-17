@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { GetServerSideProps, GetStaticProps, NextPage } from 'next';
+import { GetServerSideProps, NextPage } from 'next';
 
 import NavDrawer from "../components/drawer/Drawer";
 import FirstBlock from "../components/firstBlock/FirstBlock";
@@ -7,7 +7,7 @@ import InfoBlock from "../components/infoBlock/InfoBlock";
 import Catalog from "../components/catalog/Catalog";
 import AboutBlock from "../components/aboutblock/AboutBlock";
 import Basket from "../components/basket/Basket";
-import { GetAllList } from '../services/api';
+import { GetCatalogList } from '../services/api';
 
 import { ICatalogList } from '../types/cardType';
 
@@ -15,7 +15,7 @@ interface ICatalog {
     cataloglist: ICatalogList
 }
 
-const Home: NextPage<ICatalog> = ({ cataloglist }) => {    
+const Home: NextPage<ICatalog> = ({ cataloglist }) => {
 
     return (
         <div>
@@ -50,7 +50,7 @@ const Home: NextPage<ICatalog> = ({ cataloglist }) => {
 export default Home;
 
 export const getServerSideProps: GetServerSideProps = async () => {
-    const data = await GetAllList()
+    const data = await GetCatalogList()
     return {
         props: {
             cataloglist: data,

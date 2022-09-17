@@ -4,45 +4,45 @@ const graphqlAPI = process.env.NEXT_PUBLIC_HYGRAPH_URL;
 
 const hygraph = new GraphQLClient(graphqlAPI);
 
-export const GetAllList = async() => {
+export const GetCatalogList = async() => {
     const query = gql `
     query GetAllList {
         coffeeList: coffeeListsConnection(orderBy: position_ASC, where: {hide_not: true}) {
             edges {
                 node {
-                bodyUa {
-                    title
-                    name
-                    description
-                    tm
-                    country
-                }
-                bodyRu {
-                    title
-                    name
-                    description
-                    tm
-                    country
-                }
-                bodyEn {
-                    title
-                    name
-                    description
-                    tm
-                    country
-                }            
-                id
-                weight
-                price
-                order
-                hide
-                position
-                cardImg {
-                    url
-                }
-                listImg {
-                    url
-                }
+                    bodyUa {
+                        title
+                        name
+                        description
+                        tm
+                        country
+                    }
+                    bodyRu {
+                        title
+                        name
+                        description
+                        tm
+                        country
+                    }
+                    bodyEn {
+                        title
+                        name
+                        description
+                        tm
+                        country
+                    }            
+                    id
+                    weight
+                    price
+                    order
+                    hide
+                    position
+                    cardImg {
+                        url
+                    }
+                    listImg {
+                        url
+                    }
                 }
             }
         }
@@ -100,39 +100,140 @@ export const GetAllList = async() => {
         jamList: jamListsConnection(orderBy: position_ASC, where: {hide_not: true}) {
             edges {
                 node {
-                bodyUa {
-                    title
-                    name
-                    description
-                    tm
-                    country
+                    bodyUa {
+                        title
+                        name
+                        description
+                        tm
+                        country
+                    }
+                    bodyRu {
+                        title
+                        name
+                        description
+                        tm
+                        country
+                    }
+                    bodyEn {
+                        title
+                        name
+                        description
+                        tm
+                        country
+                    }            
+                    id
+                    weight
+                    price
+                    order
+                    hide
+                    position
+                    cardImg {
+                        url
+                    }
+                    listImg {
+                        url
+                    }
                 }
-                bodyRu {
-                    title
-                    name
-                    description
-                    tm
-                    country
+            }
+        }
+        millsList: millsListsConnection(orderBy: position_ASC, where: {hide_not: true}) {
+            edges {
+                node {
+                    bodyUa {
+                        title
+                        name
+                        description
+                        tm
+                        country
+                        sort {
+                            key
+                            value
+                        }
+                        textA
+                        textList
+                        textB
+                    }
+                    bodyRu {
+                        title
+                        name
+                        description
+                        tm
+                        country
+                        sort {
+                            key
+                            value
+                        }
+                        textA
+                        textList
+                        textB
+                    }
+                    bodyEn {
+                        title
+                        name
+                        description
+                        tm
+                        country
+                        sort {
+                            key
+                            value
+                        }
+                        textA
+                        textList
+                        textB
+                    }            
+                    id
+                    weight
+                    price
+                    order
+                    hide
+                    position
+                    cardImg {
+                        url
+                    }
+                    listImg {
+                        url
+                    }
                 }
-                bodyEn {
-                    title
-                    name
-                    description
-                    tm
-                    country
-                }            
-                id
-                weight
-                price
-                order
-                hide
-                position
-                cardImg {
-                    url
-                }
-                listImg {
-                    url
-                }
+            }
+        }       
+    }`
+    const result = await hygraph.request(query)
+    return result
+}
+
+export const GetMenuList = async() => {
+    const query = gql `
+    query GetMenuList {       
+        menuList: menuListsConnection(orderBy: position_ASC, where: {hide_not: true}) {
+            edges {
+                node {
+                    ua {
+                        title
+                        body {
+                            name
+                            description
+                            price
+                        }                    
+                    }
+                    ru {
+                        title
+                        body {
+                            name
+                            description
+                            price
+                        }                    
+                    }
+                    en {
+                        title
+                        body {
+                            name
+                            description
+                            price
+                        }                    
+                    }            
+                    id                
+                    hide
+                    position                
                 }
             }
         }

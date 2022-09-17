@@ -1,21 +1,17 @@
 export interface IMenuList {
-    menu: IMenu[];
+    menuList: {
+        edges: IMenu[]
+    }
 }
 
-export interface IMenu extends INewMenu {
-    _id: string;
-}
-
-export interface INewMenu {
-    ua: IItem;
-    ru: IItem;
-    en: IItem;
-    hide: boolean;
-    position?: number;
-}
-
-export interface ITitle {
-    title: string;
+export interface IMenu {
+    node: {
+        ua: IItem;
+        ru: IItem;
+        en: IItem;
+        hide: boolean;
+        position?: number;
+    }
 }
 
 interface IItem {

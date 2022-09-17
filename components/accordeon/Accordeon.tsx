@@ -12,7 +12,7 @@ import MuiAccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandCircleDown";
 
 import AccordeonItem from "./AccordeonItem";
-import { IBody, IMenuList } from "../../types/menuType";
+import { IBody, IMenu, IMenuList } from "../../types/menuType";
 
 const Accordion = styled((props: AccordionProps) => (
     <MuiAccordion disableGutters elevation={0} square {...props} />
@@ -64,7 +64,7 @@ const Accordeon: React.FC<IAccordeon> = ({ menulist }) => {
 
     return (
         <Container maxWidth="md" sx={{ marginTop: '50px', marginBottom: '100px' }}>
-            {menulist.menu?.map((item, i) => (
+            {menulist.menuList.edges?.map((item: IMenu, i: number) => (
                 <Accordion
                     key={i}
                     expanded={expanded === `panel${i}`}
@@ -72,15 +72,15 @@ const Accordeon: React.FC<IAccordeon> = ({ menulist }) => {
                 >
                     <AccordionSummary expandIcon={<ExpandMoreIcon />}>
                         <Typography sx={{ fontWeight: 700, fontSize: 22 }}>
-                            {router.locale === 'ua' ? item.ua.title : null}
-                            {router.locale === 'en' ? item.en.title : null}
-                            {router.locale === 'ru' ? item.ru.title : null}
+                            {router.locale === 'ua' ? item.node.ua.title : null}
+                            {router.locale === 'en' ? item.node.en.title : null}
+                            {router.locale === 'ru' ? item.node.ru.title : null}
                         </Typography>
                     </AccordionSummary>
 
                     {router.locale === 'ua' &&
                         <AccordionDetails>
-                            {item.ua.body?.map((item: IBody, i: number) => (
+                            {item.node.ua.body?.map((item: IBody, i: number) => (
                                 <Box key={i} sx={{ m: 2 }}>
                                     <AccordeonItem
                                         {...item} />
@@ -90,7 +90,7 @@ const Accordeon: React.FC<IAccordeon> = ({ menulist }) => {
                     }
                     {router.locale === 'en' &&
                         <AccordionDetails>
-                            {item.en.body?.map((item: IBody, i: number) => (
+                            {item.node.en.body?.map((item: IBody, i: number) => (
                                 <Box key={i} sx={{ m: 2 }}>
                                     <AccordeonItem
                                         {...item} />
@@ -100,7 +100,7 @@ const Accordeon: React.FC<IAccordeon> = ({ menulist }) => {
                     }
                     {router.locale === 'ru' &&
                         <AccordionDetails>
-                            {item.ru.body?.map((item: IBody, i: number) => (
+                            {item.node.ru.body?.map((item: IBody, i: number) => (
                                 <Box key={i} sx={{ m: 2 }}>
                                     <AccordeonItem
                                         {...item} />

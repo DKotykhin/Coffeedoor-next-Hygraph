@@ -52,13 +52,13 @@ const Catalog: React.FC<ICatalog> = ({ cataloglist }) => {
                 title={t("jam_title")}
                 subtitle={t("jam_subtitle")}
             />
-            {/* <ItemList
-                props={cataloglist?.millslist}                
+            <ItemList
+                props={cataloglist?.millsList.edges}                
                 lang={router.locale}                
                 id={"mills_list"}
                 title={t("mills_title")}
                 subtitle={t("mills_subtitle")}
-            /> */}
+            />
         </>
     );
 };

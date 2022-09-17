@@ -1,9 +1,10 @@
 import Head from "next/head";
-import { GetStaticProps, NextPage } from 'next';
+import { GetServerSideProps, NextPage } from 'next';
 
 import Accordeon from "../components/accordeon/Accordeon";
 import MenuTitle from "../components/menuTitle/MenuTitle";
 import ReturnButton from "../components/returnButton/ReturnButton";
+import { GetMenuList } from '../services/api';
 
 import { IMenuList } from "../types/menuType";
 
@@ -27,16 +28,11 @@ const MenuPage: NextPage<IMenuPage> = ({ menulist }) => {
 
 export default MenuPage;
 
-// export const getStaticProps: GetStaticProps = async () => {
-//     const { data } = await client.query({
-//         query: GET_ALL_MENU,
-//         variables: {
-//             query: { hide_ne: true }
-//         },
-//     });
-//     return {
-//         props: {
-//             menulist: data,
-//         },
-//     };
-// }
+export const getServerSideProps: GetServerSideProps = async () => {
+    const data = await GetMenuList()
+    return {
+        props: {
+            menulist: data,
+        },
+    };
+}

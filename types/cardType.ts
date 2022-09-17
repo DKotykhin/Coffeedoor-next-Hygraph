@@ -55,9 +55,9 @@ export interface IBody {
     tm?: string;
     sort?: IFilter;
     country?: string;
-    additional_text_1?: string[];
-    additional_list?: string[];
-    additional_text_2?: string[];
+    textA?: string[];
+    textList?: string[];
+    textB?: string[];
 }
 
 export interface IFilter {
