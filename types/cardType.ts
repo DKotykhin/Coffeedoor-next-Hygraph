@@ -58,6 +58,10 @@ export interface IBody {
     textA?: string[];
     textList?: string[];
     textB?: string[];
+    link?: {
+        title: string;
+        value: string;
+    }
 }
 
 export interface IFilter {

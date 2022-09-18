@@ -1,7 +1,7 @@
 import useTranslation from "next-translate/useTranslation";
 
 import { Backdrop, Box, Modal, Fade, Typography } from "@mui/material";
-import { ListItem, List, ListItemIcon } from "@mui/material";
+import { ListItem, List, ListItemIcon, Link } from "@mui/material";
 import DoneIcon from "@mui/icons-material/Done";
 import CloseIcon from "@mui/icons-material/Close";
 
@@ -50,6 +50,7 @@ const CardDetail: React.FC<ICardDetail> = ({
         textA,
         textB,
         textList,
+        link
     } = body;
 
     let { t } = useTranslation("card");
@@ -102,7 +103,7 @@ const CardDetail: React.FC<ICardDetail> = ({
                             {country}
                         </Typography>
                     )}
-                    <Typography sx={{ mt: 2, mb: 2 }} variant="body2">
+                    <Typography sx={{ mt: 2, mb: textA ? 2 : null}} variant="body2">
                         {description}
                     </Typography>
                     {textA?.map((item: string, i: number) => (
@@ -127,6 +128,14 @@ const CardDetail: React.FC<ICardDetail> = ({
                             {item}
                         </Typography>
                     ))}
+                    {link &&
+                        <Typography variant="body2" sx={{ mt: 1 }}>
+                            {link.title}{": "}
+                            <Link href={link.value} target='_blank'>
+                                {link.value}
+                            </Link>
+                        </Typography>
+                    }
                 </Box>
             </Fade>
         </Modal>

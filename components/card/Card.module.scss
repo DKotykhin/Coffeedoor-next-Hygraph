@@ -1,27 +1,29 @@
 @import '../../helpers/variables.scss';
 .catalog_item {
-    margin: 15px;
+    margin: 5px;
+    border-radius: 10px;
     &_name {
         font-size: 24px;
         font-weight: 700;
         padding-top: 8px;
         padding-bottom: 16px;
-        min-height: 95px;
+        min-height: 80px;
         @media (max-width: 600px) {
-            font-size: 18px;
+            font-size: 19px;
         }
     }
     &_price {
         font-size: 25px;
-        margin-bottom: 10px;
+        margin-bottom: 16px;
+        font-weight: 700;
         @media (max-width: 600px) {
             font-size: 20px;
         }
     }
     &_desc {
-        min-height: 80px;
+        min-height: 85px;
         @media (max-width: 600px) {
-            min-height: 100px;
+            min-height: 97px;
         }
         p {
             font-size: 14px;
@@ -34,7 +36,8 @@
     &_buttons .basket_button {
         @include button;
         padding: 10px;
-        margin: 10px auto;
+        margin: 0 auto;
+        margin-bottom: 10px;
         width: 140px;
         @media (max-width: 600px) {
             font-size: 12px;

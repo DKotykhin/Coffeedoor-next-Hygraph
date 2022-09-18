@@ -80,6 +80,11 @@ const Accordeon: React.FC<IAccordeon> = ({ menulist }) => {
 
                     {router.locale === 'ua' &&
                         <AccordionDetails>
+                            {item.node.ua.subtitle &&
+                                <Typography sx={{ml:2, fontSize: '18px', fontStyle: 'italic'}}>
+                                    {item.node.ua.subtitle}
+                                </Typography>
+                            }
                             {item.node.ua.body?.map((item: IBody, i: number) => (
                                 <Box key={i} sx={{ m: 2 }}>
                                     <AccordeonItem

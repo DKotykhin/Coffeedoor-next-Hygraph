@@ -46,7 +46,7 @@ export const GetCatalogList = async() => {
                 }
             }
         }
-        teaList: teaListsConnection(orderBy: position_ASC, where: {hide_not: true}, first: 20) {
+        teaList: teaListsConnection(orderBy: position_ASC, where: {hide_not: true}, first: 25) {
             edges {
                 node {
                     bodyUa {
@@ -152,6 +152,10 @@ export const GetCatalogList = async() => {
                         textA
                         textList
                         textB
+                        link {
+                            title
+                            value
+                        }
                     }
                     bodyRu {
                         title
@@ -166,6 +170,10 @@ export const GetCatalogList = async() => {
                         textA
                         textList
                         textB
+                        link {
+                            title
+                            value
+                        }
                     }
                     bodyEn {
                         title
@@ -180,6 +188,10 @@ export const GetCatalogList = async() => {
                         textA
                         textList
                         textB
+                        link {
+                            title
+                            value
+                        }
                     }            
                     id
                     weight
@@ -204,11 +216,12 @@ export const GetCatalogList = async() => {
 export const GetMenuList = async() => {
     const query = gql `
     query GetMenuList {       
-        menuList: menuListsConnection(orderBy: position_ASC, where: {hide_not: true}) {
+        menuList: menuListsConnection(orderBy: position_ASC, where: {hide_not: true}, first: 15) {
             edges {
                 node {
                     ua {
                         title
+                        subtitle
                         body {
                             name
                             description
@@ -217,6 +230,7 @@ export const GetMenuList = async() => {
                     }
                     ru {
                         title
+                        subtitle
                         body {
                             name
                             description
@@ -225,6 +239,7 @@ export const GetMenuList = async() => {
                     }
                     en {
                         title
+                        subtitle
                         body {
                             name
                             description

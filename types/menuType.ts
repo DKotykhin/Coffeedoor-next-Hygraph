@@ -15,8 +15,9 @@ export interface IMenu {
 }
 
 interface IItem {
-    body: IBody[];
     title: string;
+    subtitle: string;
+    body: IBody[];
 }
 
 export interface IBody {
