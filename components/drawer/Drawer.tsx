@@ -10,15 +10,6 @@ import MenuIcon from "@mui/icons-material/Menu";
 
 import classNames from "classnames";
 
-import {
-    groupOfTitle_1_ua,
-    groupOfTitle_1_ru,
-    groupOfTitle_1_en,
-    groupOfTitle_2_ua,
-    groupOfTitle_2_ru,
-    groupOfTitle_2_en,
-} from "./drawerConstants";
-
 import styles from "./Drawer.module.scss";
 
 interface IDrawerTitle {
@@ -31,24 +22,17 @@ const NavDrawer: React.FC = () => {
     const [state, setState] = useState(false);
     let { t } = useTranslation("firstblock");
 
-    let groupOfTitle_1: IDrawerTitle[], groupOfTitle_2: IDrawerTitle[];
-    switch (router.locale) {
-        case "ua":
-            groupOfTitle_1 = groupOfTitle_1_ua;
-            groupOfTitle_2 = groupOfTitle_2_ua;
-            break;
-        case "en":
-            groupOfTitle_1 = groupOfTitle_1_en;
-            groupOfTitle_2 = groupOfTitle_2_en;
-            break;
-        case "ru":
-            groupOfTitle_1 = groupOfTitle_1_ru;
-            groupOfTitle_2 = groupOfTitle_2_ru;
-            break;
-        default:
-            groupOfTitle_1 = groupOfTitle_1_ua;
-            groupOfTitle_2 = groupOfTitle_2_ua;
-    }
+    const groupOfTitle_1: IDrawerTitle[] = [
+        { title: t("titleA"), id: "#coffee_list" },
+        { title: t("titleB"), id: "#tea_list" },
+        { title: t("titleC"), id: "#mills_list" },
+        { title: t("titleD"), id: "#acc_list" },
+        { title: t("titleE"), id: "#jam_list" },
+    ];
+    const groupOfTitle_2: IDrawerTitle[] = [
+        { title: t("titleX"), id: "#about_block" },
+        { title: t("titleY"), id: "#footer_block" },
+    ];
 
     const toggleDrawer = (open: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {
         if (
@@ -61,7 +45,7 @@ const NavDrawer: React.FC = () => {
     };
 
     return (
-        <div className={styles.drawer}>
+        <Box className={styles.drawer}>
             <MenuIcon
                 className={styles.drawer_icon}
                 onClick={toggleDrawer(true)}
@@ -129,7 +113,7 @@ const NavDrawer: React.FC = () => {
                     ))}
                 </Box>
             </Drawer>
-        </div>
+        </Box>
     );
 }
 
