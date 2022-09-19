@@ -2,7 +2,7 @@
 .catalog_item {
     margin: 5px;
     border-radius: 10px;
-    &_name {
+    .catalog_item_name {
         font-size: 24px;
         font-weight: 700;
         padding-top: 8px;
@@ -12,7 +12,7 @@
             font-size: 19px;
         }
     }
-    &_price {
+    .catalog_item_price {
         font-size: 25px;
         margin-bottom: 16px;
         font-weight: 700;
@@ -20,7 +20,7 @@
             font-size: 20px;
         }
     }
-    &_desc {
+    .catalog_item_desc {
         min-height: 85px;
         @media (max-width: 600px) {
             min-height: 97px;
@@ -32,8 +32,8 @@
             }
         }
     }
-    &_buttons .more_button,
-    &_buttons .basket_button {
+    .catalog_item_buttons .more_button,
+    .catalog_item_buttons .basket_button {
         @include button;
         padding: 10px;
         margin: 0 auto;
@@ -45,7 +45,7 @@
             padding: 6px;
         }
     }
-    &_buttons .basket_button {
+    .catalog_item_buttons .basket_button {
         color: white;
         border: 1px solid $firm_mint;
         background-color: $firm_mint;
@@ -54,7 +54,7 @@
             background-color: #fff;
         }
     }
-    &_buttons .more_button {
+    .catalog_item_buttons .more_button {
         color: black;
         border: 1px solid black;
         &:hover {
