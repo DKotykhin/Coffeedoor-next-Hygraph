@@ -6,5 +6,15 @@
     "jam_title": "ВАРЕННЯ ARTVILLAGE",
     "jam_subtitle": "Виготовлено виключно з натуральної сировини",
     "mills_title": "КАВОМОЛКИ",
-    "mills_subtitle": "Якщо треба змолоти каву вдома"
+    "mills_subtitle": "Якщо треба змолоти каву вдома",
+    "buttonA": "всі чаї",
+    "buttonB": "зелені",
+    "buttonC": "чорні",
+    "buttonD": "трав'яні",
+    "buttonE": "фруктові",
+    "valueA": "",
+    "valueB": "зелений",
+    "valueC": "чорний",
+    "valueD": "трав'яний",
+    "valueE": "фруктовий"
 }

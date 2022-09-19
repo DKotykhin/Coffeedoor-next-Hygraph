@@ -5,6 +5,8 @@ import { Box, Stack, Chip, Badge, Typography } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import FilterAltOutlinedIcon from "@mui/icons-material/FilterAltOutlined";
 
+import { IFilter } from "../../types/cardType";
+
 const theme = createTheme({
     palette: {
         primary: {
@@ -17,11 +19,6 @@ interface IFilterItems {
     onSelect: (arg0: string) => void;
     quantity: number | null;
     filterArray?: IFilter[];
-}
-
-interface IFilter {
-    key: string;
-    value: string;
 }
 
 const FilterItems: React.FC<IFilterItems> = ({ onSelect, quantity, filterArray }) => {
@@ -60,7 +57,7 @@ const FilterItems: React.FC<IFilterItems> = ({ onSelect, quantity, filterArray }
                     >
                         {filterArray?.map((item) => (
                             <Badge
-                                key={item.key}
+                                key={item.button}
                                 badgeContent={
                                     item.value === filteredItem ? quantity : 0
                                 }
@@ -74,7 +71,7 @@ const FilterItems: React.FC<IFilterItems> = ({ onSelect, quantity, filterArray }
                                             ? "primary"
                                             : "default"
                                     }
-                                    label={item.key}
+                                    label={item.button}
                                     onClick={() => handleSelect(item.value)}
                                 />
                             </Badge>

@@ -65,6 +65,6 @@ export interface IBody {
 }
 
 export interface IFilter {
-    key: string;
+    button: string;
     value: string;
 }

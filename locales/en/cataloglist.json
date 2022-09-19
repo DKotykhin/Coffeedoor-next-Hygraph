@@ -6,5 +6,15 @@
     "jam_title": "Jam TM ARTVILLAGE",
     "jam_subtitle": "Made strictly from natural ingredients",
     "mills_title": "Сoffee grinders",
-    "mills_subtitle": "If need to grind coffee at home"
+    "mills_subtitle": "If need to grind coffee at home",
+    "buttonA": "all",
+    "buttonB": "green",
+    "buttonC": "black",
+    "buttonD": "herbal",
+    "buttonE": "fruit",
+    "valueA": "",
+    "valueB": "green",
+    "valueC": "black",
+    "valueD": "herbal",
+    "valueE": "fruit"
 }

@@ -44,6 +44,10 @@ const NavDrawer: React.FC = () => {
         setState(open);
     };
 
+    const handleClick = (data: string) => {
+        router.push(`/${data}`)
+    }
+
     return (
         <Box className={styles.drawer}>
             <MenuIcon
@@ -97,19 +101,18 @@ const NavDrawer: React.FC = () => {
                         </Link>
                     </Box>
                     {router.locales?.map((locale) => (
-                        <span
-                            key={locale}
-                            className={classNames(
-                                styles.lang_button,
-                                router.locale === locale
-                                    ? styles.lang_active
-                                    : null
-                            )}
-                        >
-                            <Link href={router.asPath} locale={locale}>
+                        <Link href={router.asPath} locale={locale} key={locale}>
+                            <Box
+                                className={classNames(
+                                    styles.lang_button,
+                                    router.locale === locale
+                                        ? styles.lang_active
+                                        : null
+                                )}
+                            >
                                 {locale}
-                            </Link>
-                        </span>
+                            </Box>
+                        </Link>
                     ))}
                 </Box>
             </Drawer>

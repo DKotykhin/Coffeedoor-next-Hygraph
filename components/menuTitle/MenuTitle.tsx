@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import useTranslation from "next-translate/useTranslation";
 
-import { Container, Typography } from "@mui/material";
+import { Container, Typography, Box } from "@mui/material";
 import classNames from "classnames";
 
 import styles from "./Menutitle.module.scss";
@@ -15,27 +15,28 @@ const MenuTitle: React.FC = () => {
     return (
         <Container maxWidth="md" className={styles.title_block}>
             <Link href="/">
-                <div className={styles.img}>
+                <Box className={styles.img}>
                     <Image
                         src={"/logo_700x191.webp"}
                         alt="logo"
                         width={700}
                         height={191}
                     />
-                </div>
+                </Box>
             </Link>
             {router.locales?.map((locale) => (
-                <span
-                    key={locale}
-                    className={classNames(
-                        styles.lang_button,
-                        router.locale === locale ? styles.lang_active : null
-                    )}
-                >
-                    <Link href={router.asPath} locale={locale}>
+                <Link href={router.asPath} locale={locale} key={locale}>
+                    <Box
+                        className={classNames(
+                            styles.lang_button,
+                            router.locale === locale
+                                ? styles.lang_active
+                                : null
+                        )}
+                    >
                         {locale}
-                    </Link>
-                </span>
+                    </Box>
+                </Link>
             ))}
             <Typography className={styles.title} component="h2">
                 {t("title")}

@@ -90,7 +90,7 @@ const CatalogCard: React.FC<ICatalogCard> = ({ props, lang }) => {
                             color="text.secondary"
                             sx={{ mt: 1 }}
                         >
-                            {sort.key}{": "}{sort.value}
+                            {sort.button}{": "}{sort.value}
                         </Typography>
                     )}
                     {weight && (
