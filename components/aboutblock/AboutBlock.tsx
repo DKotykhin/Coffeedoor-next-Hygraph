@@ -1,7 +1,6 @@
 import React from "react";
 import useTranslation from "next-translate/useTranslation";
 import Image from "next/image";
-import { useRouter } from "next/router";
 
 import {
     Container,
@@ -48,13 +47,12 @@ const theme = createTheme({
 
 interface IPhotoData {
     img: string,
-    title: string,
-    size?: boolean,
-    portrait?: boolean
+    alt: string,
+    bigSize: boolean,
+    portrait: boolean
 }
 
-const AboutBlock: React.FC = () => {
-    const router = useRouter();
+const AboutBlock: React.FC = () => {    
     let { t } = useTranslation("aboutblock");
     const benefitsItem = [
         t("itemA"), t("itemB"), t("itemC"), t("itemD"), t("itemE"), t("itemF"),
@@ -75,8 +73,8 @@ const AboutBlock: React.FC = () => {
                 gap={10}
             >
                 {photoData.map((item: IPhotoData, i: number) => {
-                    const cols = item.size ? 2 : 1;
-                    const rows = item.size ? 2 : 1;
+                    const cols = item.bigSize ? 2 : 1;
+                    const rows = item.bigSize ? 2 : 1;
                     const width = item.portrait ? 567 : 850;
                     const height = item.portrait ? 850 : 567;
                     return (
@@ -84,7 +82,7 @@ const AboutBlock: React.FC = () => {
                             <Image
                                 {...srcset(item.img, 250, 200, rows, cols)}
                                 src={`/aboutimages/${item.img}`}
-                                alt={item.title}
+                                alt={item.alt}
                                 width={width}
                                 height={height}
                                 layout='responsive'

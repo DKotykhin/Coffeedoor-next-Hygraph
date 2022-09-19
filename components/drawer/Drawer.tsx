@@ -44,10 +44,6 @@ const NavDrawer: React.FC = () => {
         setState(open);
     };
 
-    const handleClick = (data: string) => {
-        router.push(`/${data}`)
-    }
-
     return (
         <Box className={styles.drawer}>
             <MenuIcon

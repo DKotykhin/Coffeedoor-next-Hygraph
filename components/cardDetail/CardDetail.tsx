@@ -90,7 +90,7 @@ const CardDetail: React.FC<ICardDetail> = ({
                             {weight}{t("unit")}
                         </Typography>
                     )}
-                    {sort && <Typography variant="body2">{sort.button}{": "}{sort.value}</Typography>}
+                    {sort && <Typography variant="body2">{sort.key}{": "}{sort.value}</Typography>}
                     {tm && (
                         <Typography variant="body2">
                             {t("made")}

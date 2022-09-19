@@ -21,6 +21,8 @@ const MenuTitle: React.FC = () => {
                         alt="logo"
                         width={700}
                         height={191}
+                        placeholder="blur"
+                        blurDataURL="/logo_700x191.webp"
                     />
                 </Box>
             </Link>

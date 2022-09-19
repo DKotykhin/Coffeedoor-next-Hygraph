@@ -1,11 +1,14 @@
 import { useState } from "react";
+import { useRouter } from "next/router";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper";
 import { motion, AnimatePresence } from "framer-motion";
+
 import { Container, Typography } from "@mui/material";
 
 import Card from "../card/Card";
 import FilterItems from "../filters/FilterItems";
+
 import { ICard, IFilter } from "../../types/cardType";
 
 import "swiper/css";
@@ -17,8 +20,7 @@ interface IItemList {
     id: string;
     title: string;
     subtitle: string;    
-    filterArray?: IFilter[];
-    lang?: string
+    filterArray?: IFilter[]    
 }
 
 const ItemList: React.FC<IItemList> = ({
@@ -26,21 +28,21 @@ const ItemList: React.FC<IItemList> = ({
     id,
     title,
     subtitle,    
-    filterArray,
-    lang    
+    filterArray       
 }) => {
     const [list, setList] = useState(props);
+    const router = useRouter();
 
     const onSelectSort = (sort: string) => {
         let data = props;
         if (sort) {
-            if (lang === 'ua') {
+            if (router.locale === 'ua') {
                 data = props.filter(item => item.node.bodyUa.sort?.value === sort);
             }
-            if (lang === 'ru') {
+            if (router.locale === 'ru') {
                 data = props.filter(item => item.node.bodyRu.sort?.value === sort);
             }
-            if (lang === 'en') {
+            if (router.locale === 'en') {
                 data = props.filter(item => item.node.bodyEn.sort?.value === sort);
             }
         }
@@ -85,7 +87,7 @@ const ItemList: React.FC<IItemList> = ({
                                 exit={{ opacity: 0 }}
                                 // transition={{duration: 0.5}}
                             >
-                                <Card props={item} lang={lang} />
+                                <Card props={item} lang={router.locale} />
                             </motion.div>
                         </SwiperSlide>
                     ))}

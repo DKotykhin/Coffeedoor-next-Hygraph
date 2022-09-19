@@ -53,7 +53,7 @@ export interface IBody {
     name: string;
     description?: string;
     tm?: string;
-    sort?: IFilter;
+    sort?: ISort;
     country?: string;
     textA?: string[];
     textList?: string[];
@@ -66,5 +66,10 @@ export interface IBody {
 
 export interface IFilter {
     button: string;
+    value: string;
+}
+
+export interface ISort {
+    key: string;
     value: string;
 }
