@@ -16,12 +16,7 @@ import DoneIcon from "@mui/icons-material/Done";
 
 import { motion } from "framer-motion";
 import classNames from "classnames";
-import {
-    benefitsItem_en,
-    benefitsItem_ua,
-    benefitsItem_ru,
-    itemData,
-} from "./AboutBlockConstants";
+import { photoData } from "./photoData";
 
 import styles from "./Aboutblock.module.scss";
 
@@ -51,23 +46,19 @@ const theme = createTheme({
     },
 });
 
+interface IPhotoData {
+    img: string,
+    title: string,
+    size?: boolean,
+    portrait?: boolean
+}
+
 const AboutBlock: React.FC = () => {
     const router = useRouter();
     let { t } = useTranslation("aboutblock");
-    let benefitsItem: string[];
-    switch (router.locale) {
-        case "ua":
-            benefitsItem = benefitsItem_ua;
-            break;
-        case "en":
-            benefitsItem = benefitsItem_en;
-            break;
-        case "ru":
-            benefitsItem = benefitsItem_ru;
-            break;
-        default:
-            benefitsItem = benefitsItem_ua;
-    }
+    const benefitsItem = [
+        t("itemA"), t("itemB"), t("itemC"), t("itemD"), t("itemE"), t("itemF"),
+    ]
 
     return (
         <Container
@@ -83,7 +74,7 @@ const AboutBlock: React.FC = () => {
                 }}
                 gap={10}
             >
-                {itemData.map((item, i) => {
+                {photoData.map((item: IPhotoData, i: number) => {
                     const cols = item.size ? 2 : 1;
                     const rows = item.size ? 2 : 1;
                     const width = item.portrait ? 567 : 850;
@@ -97,6 +88,8 @@ const AboutBlock: React.FC = () => {
                                 width={width}
                                 height={height}
                                 layout='responsive'
+                                placeholder="blur"
+                                blurDataURL={`/aboutimages/${item.img}`}
                             />
                         </ImageListItem>
                     );
