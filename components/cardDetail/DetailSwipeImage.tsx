@@ -16,30 +16,42 @@ interface IDetailSwipeImage {
 
 const DetailSwipeImage: React.FC<IDetailSwipeImage> = ({ img, alt }) => {
     return (
-        <Swiper
-            effect={"cube"}
-            grabCursor={true}
-            cubeEffect={{
-                shadow: true,
-                slideShadows: true,
-                shadowOffset: 10,
-                shadowScale: 0.8,
-            }}
-            pagination={true}
-            modules={[EffectCube, Pagination]}
-        >
-            {img?.map((item, i) => (
-                <SwiperSlide key={i}>
-                    <Image
-                        src={`/wait_1.webp`}
-                        loader={() => item.url ? item.url : `/wait_1.webp`}
-                        alt={alt}
-                        width={350}
-                        height={350}
-                    />
-                </SwiperSlide>
-            ))}
-        </Swiper>
+        <>
+            {img.length ?
+                <Swiper
+                    effect={"cube"}
+                    grabCursor={true}
+                    cubeEffect={{
+                        shadow: true,
+                        slideShadows: true,
+                        shadowOffset: 10,
+                        shadowScale: 0.8,
+                    }}
+                    pagination={true}
+                    modules={[EffectCube, Pagination]}
+                >
+                    {img.map((item, i) => (
+                        <SwiperSlide key={i}>
+                            <Image
+                                src={item.url}
+                                loader={() => item.url}
+                                alt={alt}
+                                width={350}
+                                height={350}
+                                unoptimized={true}
+                            />
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
+                :
+                <Image
+                    src={"/wait_1.webp"}
+                    alt={'wait for photo'}
+                    width={350}
+                    height={350}
+                />
+            }
+        </>
     );
 };
 

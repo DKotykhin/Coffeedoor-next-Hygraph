@@ -12,7 +12,7 @@ const Error: React.FC = () => {
         <Box className={styles.error}>
             <Box className={styles.error_image}>
                 <Image
-                    src={"/sorry_1.jpg"}
+                    src={"/sorry_1.webp"}
                     alt="error"
                     width={270}
                     height={270}

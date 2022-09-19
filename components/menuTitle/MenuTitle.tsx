@@ -17,7 +17,7 @@ const MenuTitle: React.FC = () => {
             <Link href="/">
                 <div className={styles.img}>
                     <Image
-                        src={"/logo_700x191.jpg"}
+                        src={"/logo_700x191.webp"}
                         alt="logo"
                         width={700}
                         height={191}

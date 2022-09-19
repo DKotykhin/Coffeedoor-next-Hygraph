@@ -57,11 +57,12 @@ const CatalogCard: React.FC<ICatalogCard> = ({ props, lang }) => {
             />
             <Card sx={{ maxWidth: 350 }} className={styles.catalog_item} raised>
                 <Image
-                    src={`/wait_1.webp`}
-                    loader={() => cardImg.url ? cardImg.url : `/wait_1.webp`}
+                    src={cardImg?.url || `/wait_1.webp`}
+                    loader={() => cardImg.url}
                     alt={name}
                     width={350}
                     height={350}
+                    unoptimized={true}
                 />
                 <CardContent>
                     <Typography className={styles.catalog_item_name}>

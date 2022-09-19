@@ -103,7 +103,7 @@ const CardDetail: React.FC<ICardDetail> = ({
                             {country}
                         </Typography>
                     )}
-                    <Typography sx={{ mt: 2, mb: textA ? 2 : null}} variant="body2">
+                    <Typography sx={{ mt: 2, mb: (textA || textList) ? 2 : null}} variant="body2">
                         {description}
                     </Typography>
                     {textA?.map((item: string, i: number) => (

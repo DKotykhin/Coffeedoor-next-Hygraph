@@ -16,7 +16,7 @@ const ThanksBlock: React.FC = () => {
             <Link href="/">
                 <Box className={styles.img}>
                     <Image
-                        src={"/logo_700x191.jpg"}
+                        src={"/logo_700x191.webp"}
                         alt="logo"
                         width={700}
                         height={191}
