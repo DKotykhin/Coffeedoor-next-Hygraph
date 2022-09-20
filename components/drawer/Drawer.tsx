@@ -26,7 +26,7 @@ const NavDrawer: React.FC = () => {
         { title: t("titleA"), id: "#coffee_list" },
         { title: t("titleB"), id: "#tea_list" },
         { title: t("titleC"), id: "#mills_list" },
-        { title: t("titleD"), id: "#acc_list" },
+        { title: t("titleD"), id: "#accessories_list" },
         { title: t("titleE"), id: "#jam_list" },
     ];
     const groupOfTitle_2: IDrawerTitle[] = [

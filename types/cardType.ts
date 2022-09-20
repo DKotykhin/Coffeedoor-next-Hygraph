@@ -11,6 +11,9 @@ export interface ICatalogList {
     millsList: { 
         edges: ICard[]
     };
+    accessoriesList: { 
+        edges: ICard[]
+    };
 }
 
 export interface ICard {

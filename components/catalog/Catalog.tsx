@@ -45,6 +45,12 @@ const Catalog: React.FC<ICatalog> = ({ cataloglist }) => {
                 title={t("mills_title")}
                 subtitle={t("mills_subtitle")}
             />
+            <ItemList
+                props={cataloglist?.accessoriesList.edges}
+                id={"accessories_list"}
+                title={t("accessories_title")}
+                subtitle={t("accessories_subtitle")}
+            />
         </>
     );
 };

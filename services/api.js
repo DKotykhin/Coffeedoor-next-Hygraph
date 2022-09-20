@@ -207,6 +207,78 @@ export const GetCatalogList = async() => {
                     }
                 }
             }
+        }
+        accessoriesList: accessoriesListsConnection(orderBy: position_ASC, where: {hide_not: true}) {
+            edges {
+                node {
+                    bodyUa {
+                        title
+                        name
+                        description
+                        tm
+                        country
+                        sort {
+                            key
+                            value
+                        }
+                        textA
+                        textList
+                        textB
+                        link {
+                            title
+                            value
+                        }
+                    }
+                    bodyRu {
+                        title
+                        name
+                        description
+                        tm
+                        country
+                        sort {
+                            key
+                            value
+                        }
+                        textA
+                        textList
+                        textB
+                        link {
+                            title
+                            value
+                        }
+                    }
+                    bodyEn {
+                        title
+                        name
+                        description
+                        tm
+                        country
+                        sort {
+                            key
+                            value
+                        }
+                        textA
+                        textList
+                        textB
+                        link {
+                            title
+                            value
+                        }
+                    }            
+                    id
+                    weight
+                    price
+                    order
+                    hide
+                    position
+                    cardImg {
+                        url
+                    }
+                    listImg {
+                        url
+                    }
+                }
+            }
         }       
     }`
     const result = await hygraph.request(query)
