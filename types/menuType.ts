@@ -14,7 +14,7 @@ export interface IMenu {
     }
 }
 
-interface IItem {
+export interface IItem {
     title: string;
     subtitle: string;
     body: IBody[];

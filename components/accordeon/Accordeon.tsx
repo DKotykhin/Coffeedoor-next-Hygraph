@@ -1,18 +1,17 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
 
-import { Box } from "@mui/system";
 import { Container, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import MuiAccordion, { AccordionProps } from '@mui/material/Accordion';
 import MuiAccordionSummary, {
     AccordionSummaryProps,
 } from '@mui/material/AccordionSummary';
-import MuiAccordionDetails from "@mui/material/AccordionDetails";
+
 import ExpandMoreIcon from "@mui/icons-material/ExpandCircleDown";
 
-import AccordeonItem from "./AccordeonItem";
-import { IBody, IMenu, IMenuList } from "../../types/menuType";
+import { AccordeonBlock } from "./AccordeonBlock";
+import { IMenu, IMenuList } from "../../types/menuType";
 
 const Accordion = styled((props: AccordionProps) => (
     <MuiAccordion disableGutters elevation={0} square {...props} />
@@ -45,10 +44,6 @@ const AccordionSummary = styled((props: AccordionSummaryProps) => (
     },
 }));
 
-const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
-    padding: theme.spacing(2),
-    borderTop: "1px solid rgba(0, 0, 0, .125)",
-}));
 
 interface IAccordeon {
     menulist: IMenuList
@@ -78,40 +73,14 @@ const Accordeon: React.FC<IAccordeon> = ({ menulist }) => {
                         </Typography>
                     </AccordionSummary>
 
-                    {router.locale === 'ua' &&
-                        <AccordionDetails>
-                            {item.node.ua.subtitle &&
-                                <Typography sx={{ml:2, fontSize: '18px', fontStyle: 'italic'}}>
-                                    {item.node.ua.subtitle}
-                                </Typography>
-                            }
-                            {item.node.ua.body?.map((item: IBody, i: number) => (
-                                <Box key={i} sx={{ m: 2 }}>
-                                    <AccordeonItem
-                                        {...item} />
-                                </Box>
-                            ))}
-                        </AccordionDetails>
+                    {router.locale === 'ua' &&                        
+                        <AccordeonBlock blockItem={item.node.ua}/>
                     }
-                    {router.locale === 'en' &&
-                        <AccordionDetails>
-                            {item.node.en.body?.map((item: IBody, i: number) => (
-                                <Box key={i} sx={{ m: 2 }}>
-                                    <AccordeonItem
-                                        {...item} />
-                                </Box>
-                            ))}
-                        </AccordionDetails>
+                    {router.locale === 'en' &&                       
+                        <AccordeonBlock blockItem={item.node.en}/>
                     }
-                    {router.locale === 'ru' &&
-                        <AccordionDetails>
-                            {item.node.ru.body?.map((item: IBody, i: number) => (
-                                <Box key={i} sx={{ m: 2 }}>
-                                    <AccordeonItem
-                                        {...item} />
-                                </Box>
-                            ))}
-                        </AccordionDetails>
+                    {router.locale === 'ru' &&                        
+                        <AccordeonBlock blockItem={item.node.ru}/>
                     }
                 </Accordion>
             ))}
