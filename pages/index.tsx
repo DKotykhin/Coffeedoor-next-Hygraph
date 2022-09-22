@@ -29,7 +29,7 @@ const Home: NextPage<ICatalog> = ({ cataloglist }) => {
                     content="width=device-width, initial-scale=1"
                 />
                 <meta name="theme-color" content="#000000" />
-                <meta property="og:image" content="/public/logo_192x192.png"></meta>
+                <meta name="image" content="/logo_192x192.png" />                
                 <meta
                     name="description"
                     content="CoffeeDOOR – це кавовий бренд, який по'єднує в собі свіжообсмажену каву рівня Speciality, кращі кавові технології, стильний дизайнерський інтер'єр, швидкий і дружній сервіс"
