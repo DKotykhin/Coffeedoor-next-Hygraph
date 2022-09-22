@@ -29,7 +29,7 @@ const Home: NextPage<ICatalog> = ({ cataloglist }) => {
                     content="width=device-width, initial-scale=1"
                 />
                 <meta name="theme-color" content="#000000" />
-                <meta name="image" content="/logo_192x192.png" />                
+                <meta property="og:image" content="https://static.tildacdn.com/tild6535-3737-4735-b930-306561333634/Coffeedoor_01.JPG"/>                             
                 <meta
                     name="description"
                     content="CoffeeDOOR – це кавовий бренд, який по'єднує в собі свіжообсмажену каву рівня Speciality, кращі кавові технології, стильний дизайнерський інтер'єр, швидкий і дружній сервіс"
