@@ -17,12 +17,11 @@ import "../styles/globals.scss";
 
 const TRACKING_ID: any = process.env.NEXT_PUBLIC_GOOGLE_DATA_ID;
 const ga4react = new GA4React(TRACKING_ID);
-// ga4react.initialize().then().catch()
-(async (_) => {
 
+(async () => {
   await ga4react.initialize()
-    .then(res => console.log("Analytics Success."))
-    .catch(err => console.log("Analytics Failure."))
+    .then(res => console.log("Analytics Success"))
+    .catch(err => console.log("Analytics Failure"))
 })()
 
 function MyApp({ Component, pageProps }: AppProps) {
