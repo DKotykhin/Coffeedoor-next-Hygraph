@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Provider } from "react-redux";
 
 import { useRouter } from "next/router";
+import ReactGA from 'react-ga';
 
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -13,6 +14,9 @@ import Spinner from "../components/spinner/Spinner";
 import type { AppProps } from 'next/app';
 
 import "../styles/globals.scss";
+
+const TRACKING_ID: any = process.env.NEXT_PUBLIC_GOOGLE_DATA_ID;
+ReactGA.initialize(TRACKING_ID);
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [loading, setLoading] = useState(true);
