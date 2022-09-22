@@ -18,7 +18,7 @@ import "../styles/globals.scss";
 const TRACKING_ID: any = process.env.NEXT_PUBLIC_GOOGLE_DATA_ID;
 const ga4react = new GA4React(TRACKING_ID);
 // ga4react.initialize().then().catch()
-(async (_: any) => {
+(async (_) => {
 
   await ga4react.initialize()
     .then(res => console.log("Analytics Success."))
