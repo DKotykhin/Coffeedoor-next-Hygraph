@@ -1,5 +1,16 @@
-@import '../../helpers/variables.scss';
+@import '../../constants/constants.scss';
 .item_list {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 420px;
+    max-width: 90%;
+    max-height: 80%;
+    overflow-y: scroll;
+    background-color: "background.paper";
+    border: 2px solid #000;
+    padding: 24px;
     border-radius: 10px;
     .item_list_close {
         margin-bottom: 8px;
@@ -38,12 +49,6 @@
             background-color: #fff;
         }
     }
-    // .swiper-pagination-bullet-active {
-    //     background-color: $firm_mint;
-    // }
-    // .swiper {
-    //     text-align: center;
-    // }
     .list div span {
         font-size: 14px;
     }

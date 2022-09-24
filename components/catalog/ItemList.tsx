@@ -16,7 +16,7 @@ import "swiper/css/navigation";
 import styles from "./ItemList.module.scss";
 
 interface IItemList {
-    props: ICard[];
+    itemList: ICard[];
     id: string;
     title: string;
     subtitle: string;    
@@ -24,26 +24,26 @@ interface IItemList {
 }
 
 const ItemList: React.FC<IItemList> = ({
-    props,
+    itemList,
     id,
     title,
     subtitle,    
     filterArray       
 }) => {
-    const [list, setList] = useState(props);
+    const [list, setList] = useState(itemList);
     const router = useRouter();
 
     const onSelectSort = (sort: string) => {
-        let data = props;
+        let data = itemList;
         if (sort) {
             if (router.locale === 'ua') {
-                data = props.filter(item => item.node.bodyUa.sort?.value === sort);
+                data = itemList.filter(item => item.node.bodyUa.sort?.value === sort);
             }
             if (router.locale === 'ru') {
-                data = props.filter(item => item.node.bodyRu.sort?.value === sort);
+                data = itemList.filter(item => item.node.bodyRu.sort?.value === sort);
             }
             if (router.locale === 'en') {
-                data = props.filter(item => item.node.bodyEn.sort?.value === sort);
+                data = itemList.filter(item => item.node.bodyEn.sort?.value === sort);
             }
         }
         setList(data);
@@ -77,6 +77,7 @@ const ItemList: React.FC<IItemList> = ({
                 }}                
                 navigation={true}
                 modules={[Navigation]}
+                grabCursor={true}
             >
                 <AnimatePresence initial={false}>
                     {list?.map((item) => (
@@ -87,7 +88,7 @@ const ItemList: React.FC<IItemList> = ({
                                 exit={{ opacity: 0 }}
                                 // transition={{duration: 0.5}}
                             >
-                                <Card props={item} lang={router.locale} />
+                                <Card item={item} lang={router.locale} />
                             </motion.div>
                         </SwiperSlide>
                     ))}

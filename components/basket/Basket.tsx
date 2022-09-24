@@ -22,21 +22,6 @@ import { IBasket, IFormData, ITelegramData } from "../../types/basketType";
 
 import styles from "./Basket.module.scss";
 
-const StyledModal = {
-    position: "absolute",
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
-    width: 500,
-    maxWidth: "90%",
-    maxHeight: "80%",
-    overflowY: "scroll",
-    bgcolor: "background.paper",
-    border: "2px solid #000",
-    boxShadow: 24,
-    p: 3,
-};
-
 const Basket: React.FC = () => {
     const [open, setOpen] = React.useState(false);
     const router = useRouter();
@@ -84,7 +69,7 @@ const Basket: React.FC = () => {
                 }}
             >
                 <Fade in={open}>
-                    <Box sx={StyledModal} className={styles.modal}>
+                    <Box sx={{ bgcolor: "background.paper", boxShadow: 24 }} className={styles.modal}>
                         <CloseIcon
                             className={styles.modal_close}
                             onClick={handleClose}

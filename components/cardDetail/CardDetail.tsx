@@ -11,35 +11,20 @@ import { IBody, ICard } from "../../types/cardType";
 
 import styles from "./CardDetail.module.scss";
 
-const style = {
-    position: "absolute",
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
-    width: 420,
-    height: 600,
-    overflowY: "scroll",
-    maxWidth: "90%",
-    bgcolor: "background.paper",
-    border: "2px solid #000",
-    boxShadow: 24,
-    p: 3,
-};
-
 interface ICardDetail {
-    props: ICard;
+    item: ICard;
     body: IBody;
     openModal: boolean;
     closeModal: () => void;
 }
 
 const CardDetail: React.FC<ICardDetail> = ({
-    props,
+    item,
     body,
     openModal,
     closeModal,
 }) => {
-    const { price, weight, listImg } = props.node;
+    const { price, weight, listImg } = item.node;
     const {
         name,
         title,
@@ -70,7 +55,7 @@ const CardDetail: React.FC<ICardDetail> = ({
             }}
         >
             <Fade in={openModal}>
-                <Box sx={style} className={styles.item_list}>
+                <Box sx={{ bgcolor: "background.paper", boxShadow: 24 }} className={styles.item_list}>
                     <CloseIcon
                         className={styles.item_list_close}
                         onClick={handleClose}
@@ -83,7 +68,7 @@ const CardDetail: React.FC<ICardDetail> = ({
                         {price}
                         {t("currency")}
                     </Typography>
-                    <DetailActive props={props} body={body} closeModal={handleClose} />
+                    <DetailActive item={item} body={body} closeModal={handleClose} />
                     {weight && (
                         <Typography variant="body2">
                             {t("weight")}

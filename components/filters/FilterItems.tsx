@@ -2,18 +2,9 @@ import { useState } from "react";
 import useTranslation from "next-translate/useTranslation";
 
 import { Box, Stack, Chip, Badge, Typography } from "@mui/material";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
 import FilterAltOutlinedIcon from "@mui/icons-material/FilterAltOutlined";
 
 import { IFilter } from "../../types/cardType";
-
-const theme = createTheme({
-    palette: {
-        primary: {
-            main: "#00a1b6",
-        },
-    },
-});
 
 interface IFilterItems {
     onSelect: (arg0: string) => void;
@@ -49,35 +40,33 @@ const FilterItems: React.FC<IFilterItems> = ({ onSelect, quantity, filterArray }
                 </Typography>
             </Box>
             {showSelector && (
-                <ThemeProvider theme={theme}>
-                    <Stack
-                        direction="row"
-                        spacing={3}
-                        sx={{ display: "flex", flexWrap: "wrap", mt: 3 }}
-                    >
-                        {filterArray?.map((item) => (
-                            <Badge
-                                key={item.button}
-                                badgeContent={
-                                    item.value === filteredItem ? quantity : 0
+                <Stack
+                    direction="row"
+                    spacing={3}
+                    sx={{ display: "flex", flexWrap: "wrap", mt: 3 }}
+                >
+                    {filterArray?.map((item) => (
+                        <Badge
+                            key={item.button}
+                            badgeContent={
+                                item.value === filteredItem ? quantity : 0
+                            }
+                            color="primary"
+                        >
+                            <Chip
+                                sx={{ mb: 2 }}
+                                variant="outlined"
+                                color={
+                                    item.value === filteredItem
+                                        ? "primary"
+                                        : "default"
                                 }
-                                color="primary"
-                            >
-                                <Chip
-                                    sx={{ mb: 2 }}
-                                    variant="outlined"
-                                    color={
-                                        item.value === filteredItem
-                                            ? "primary"
-                                            : "default"
-                                    }
-                                    label={item.button}
-                                    onClick={() => handleSelect(item.value)}
-                                />
-                            </Badge>
-                        ))}
-                    </Stack>
-                </ThemeProvider>
+                                label={item.button}
+                                onClick={() => handleSelect(item.value)}
+                            />
+                        </Badge>
+                    ))}
+                </Stack>
             )}
         </Box>
     );

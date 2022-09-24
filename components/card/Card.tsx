@@ -13,12 +13,12 @@ import { IBody, ICard } from "../../types/cardType";
 import styles from "./Card.module.scss";
 
 interface ICatalogCard {
-    props: ICard;
+    item: ICard;
     lang?: string
 }
 
-const CatalogCard: React.FC<ICatalogCard> = ({ props, lang }) => {    
-    const { id, bodyUa, bodyRu, bodyEn, price, weight, cardImg, order } = props.node;
+const CatalogCard: React.FC<ICatalogCard> = ({ item, lang }) => {    
+    const { id, bodyUa, bodyRu, bodyEn, price, weight, cardImg, order } = item.node;
     let body: IBody;
     switch (lang) {
         case "ua":
@@ -50,7 +50,7 @@ const CatalogCard: React.FC<ICatalogCard> = ({ props, lang }) => {
     return (
         <>
             <CardDetail
-                props={props}
+                item={item}
                 body={body}
                 openModal={open}
                 closeModal={closeModal}
@@ -80,15 +80,14 @@ const CatalogCard: React.FC<ICatalogCard> = ({ props, lang }) => {
                                 {t("order")}
                             </Typography>
                         )}
-                        <Typography color="text.secondary">
+                        <Typography color="text.secondary" sx={{pb:2}}>
                             {description}
                         </Typography>
                     </Box>
                     {sort && (
                         <Typography
                             variant="body2"
-                            color="text.secondary"
-                            sx={{ mt: 1 }}
+                            color="text.secondary"                            
                         >
                             {sort.key}{": "}{sort.value}
                         </Typography>

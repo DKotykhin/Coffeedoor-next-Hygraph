@@ -11,28 +11,29 @@ const initialState: BasketState = {
 
 interface ITelegramData {
     formdata: IFormData;
-    basketdata: IBasket[]
+    basketdata: IBasket[];
 }
 
-export const sendDataToTelegram = createAsyncThunk<void, ITelegramData, {rejectValue: string}>(
-    "basket/sendDataToTelegram",
-    async (data, { rejectWithValue }) => {
-        try {
-            const response = await fetch("/api/sendToTelegram", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(data),
-            });
-            if (!response.ok) {
-                throw new Error("Can't send data to Telegram");
-            }
-        } catch (error: any) {
-            return rejectWithValue(error.message);
+export const sendDataToTelegram = createAsyncThunk<
+    void,
+    ITelegramData,
+    { rejectValue: string }
+>("basket/sendDataToTelegram", async (data, { rejectWithValue }) => {
+    try {
+        const response = await fetch("/api/sendToTelegram", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+        });
+        if (!response.ok) {
+            throw new Error("Can't send data to Telegram");
         }
+    } catch (error: any) {
+        return rejectWithValue(error.message);
     }
-);
+});
 
 const basketdataListSlice = createSlice({
     name: "basket",
@@ -42,21 +43,18 @@ const basketdataListSlice = createSlice({
             const itemIndex = state.basketdata.findIndex(
                 (item) => item.id === action.payload.id
             );
-            if (itemIndex < 0) {
-                state.basketdata = [...state.basketdata, action.payload];
-            } else {
-                const newOrder = state.basketdata.map((item, index) => {
-                    if (index === itemIndex) {
-                        return {
-                            ...item,
-                            quantity: item.quantity + action.payload.quantity,
-                        };
-                    } else {
-                        return item;
-                    }
-                });
-                state.basketdata = newOrder;
-            }
+            itemIndex < 0
+                ? (state.basketdata = [...state.basketdata, action.payload])
+                : (state.basketdata = state.basketdata.map((item, index) => {
+                      if (index === itemIndex) {
+                          return {
+                              ...item,
+                              quantity: item.quantity + action.payload.quantity,
+                          };
+                      } else {
+                          return item;
+                      }
+                  }));
         },
 
         basketRemoveItems: (state, action: PayloadAction<string>) => {
@@ -89,9 +87,12 @@ const basketdataListSlice = createSlice({
             .addCase(sendDataToTelegram.fulfilled, (state) => {
                 state.basketdata = [];
             })
-            .addCase(sendDataToTelegram.rejected, (state, action: PayloadAction<string | undefined>) => {
-                console.log("Something get wrong: ", action.payload);
-            });
+            .addCase(
+                sendDataToTelegram.rejected,
+                (state, action: PayloadAction<string | undefined>) => {
+                    console.log("Something get wrong: ", action.payload);
+                }
+            );
     },
 });
 

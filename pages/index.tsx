@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import { GetServerSideProps, NextPage } from 'next';
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 import NavDrawer from "../components/drawer/Drawer";
 import FirstBlock from "../components/firstBlock/FirstBlock";
@@ -11,6 +12,14 @@ import { GetCatalogList } from '../services/api';
 
 import { ICatalogList } from '../types/cardType';
 
+const theme = createTheme({
+    palette: {
+        primary: {
+            main: "#00a1b6",
+        },
+    },
+});
+
 interface ICatalog {
     cataloglist: ICatalogList
 }
@@ -18,7 +27,7 @@ interface ICatalog {
 const Home: NextPage<ICatalog> = ({ cataloglist }) => {
 
     return (
-        <div>
+        <>
             <Head>
                 <title>
                     {"CoffeeDoor - кав'ярня та магазин свіжообсмаженої кави"}
@@ -29,7 +38,6 @@ const Home: NextPage<ICatalog> = ({ cataloglist }) => {
                     content="width=device-width, initial-scale=1"
                 />
                 <meta name="theme-color" content="#000000" />
-                <meta property="og:image" content="https://static.tildacdn.com/tild6535-3737-4735-b930-306561333634/Coffeedoor_01.JPG"/>                             
                 <meta
                     name="description"
                     content="CoffeeDOOR – це кавовий бренд, який по'єднує в собі свіжообсмажену каву рівня Speciality, кращі кавові технології, стильний дизайнерський інтер'єр, швидкий і дружній сервіс"
@@ -38,13 +46,15 @@ const Home: NextPage<ICatalog> = ({ cataloglist }) => {
                 <link rel="icon" href="/favicon.ico" />
                 <link rel="apple-touch-icon" href="/logo_192x192.png" />
             </Head>
-            <NavDrawer />
-            <FirstBlock />
-            <InfoBlock />
-            <Catalog cataloglist={cataloglist} />
-            <AboutBlock />
-            <Basket />
-        </div>
+            <ThemeProvider theme={theme}>
+                <NavDrawer />
+                <FirstBlock />
+                <InfoBlock />
+                <Catalog cataloglist={cataloglist} />
+                <AboutBlock />
+                <Basket />
+            </ThemeProvider>
+        </>
     )
 }
 
