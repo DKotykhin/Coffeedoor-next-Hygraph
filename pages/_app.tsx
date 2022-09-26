@@ -20,7 +20,7 @@ const ga4react = new GA4React(TRACKING_ID);
 
 (async () => {
   await ga4react.initialize()
-    .then(res => console.log("Analytics Success"))
+    // .then(res => console.log("Analytics Success"))
     .catch(err => console.log("Analytics Failure"))
 })()
 

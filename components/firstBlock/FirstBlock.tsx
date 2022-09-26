@@ -32,7 +32,7 @@ const FirstBlock: React.FC = () => {
                         {t("link_1")}
                     </MuiLink>
                     <Link href="/menu">
-                        <span className={styles.link_2}>{t("link_2")}</span>
+                        <Box className={styles.link_2}>{t("link_2")}</Box>
                     </Link>
                 </Box>
                 <ArrowBackIosIcon className={styles.first_block_icon} />

@@ -21,10 +21,7 @@
         }
     }
     .catalog_item_desc {
-        min-height: 85px;
-        @media (max-width: 600px) {
-            min-height: 97px;
-        }
+        min-height: 100px;
         p {
             font-size: 14px;
             @media (max-width: 600px) {
@@ -39,9 +36,14 @@
         margin: 0 auto;
         margin-bottom: 10px;
         width: 140px;
-        @media (max-width: 600px) {
+        @media (max-width: 450px) {
             font-size: 12px;
             max-width: 100px;
+            padding: 6px;
+        }
+        @media (max-width: 350px) {
+            font-size: 10px;
+            max-width: 80px;
             padding: 6px;
         }
     }

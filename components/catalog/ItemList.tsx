@@ -63,11 +63,11 @@ const ItemList: React.FC<IItemList> = ({
                 />
             )}
             <Swiper
-                slidesPerView={1.3}
+                slidesPerView={1.2}
                 spaceBetween={10}                
                 breakpoints={{
                     850: {
-                        slidesPerView: 2,
+                        slidesPerView: 2.2,
                         threshold: 20
                     },
                     1200: {
@@ -77,7 +77,7 @@ const ItemList: React.FC<IItemList> = ({
                 }}                
                 navigation={true}
                 modules={[Navigation]}
-                grabCursor={true}
+                grabCursor={true}                
             >
                 <AnimatePresence initial={false}>
                     {list?.map((item) => (

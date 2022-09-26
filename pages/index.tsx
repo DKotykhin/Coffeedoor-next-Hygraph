@@ -44,7 +44,7 @@ const Home: NextPage<ICatalog> = ({ cataloglist }) => {
                 />
                 <meta name="keywords" content="кава в зернах, кавомолка, кофе, кофемолка" />
                 <link rel="icon" href="/favicon.ico" />
-                <link rel="apple-touch-icon" href="/logo_192x192.png" />
+                <link rel="apple-touch-icon" href="/logo_192x192.webp" />
             </Head>
             <ThemeProvider theme={theme}>
                 <NavDrawer />
