@@ -34,23 +34,6 @@ export interface ICard {
     }
 }
 
-export interface INewCardData {
-    node: {
-        bodyUa: IBody;
-        bodyRu: IBody;
-        bodyEn: IBody;
-        cardImg: {
-            url: string
-        };
-        listImg: Array<{url: string}>;
-        weight?: number;
-        price: number;
-        order: boolean;
-        hide: boolean;
-        position: number;
-    }
-}
-
 export interface IBody {
     title: string;
     name: string;
