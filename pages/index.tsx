@@ -48,7 +48,7 @@ const Home: NextPage<ICatalog> = ({ cataloglist }) => {
                 <meta property="og:url" content="https://www.luckycat.pp.ua/" />
                 <meta property="og:title" content="CoffeeDoor - кав'ярня та магазин свіжообсмаженої кави" />
                 <meta property="og:description" content="CoffeeDOOR – це кавовий бренд, який по'єднує в собі свіжообсмажену каву рівня Speciality, кращі кавові технології, стильний дизайнерський інтер'єр, швидкий і дружній сервіс" />
-                <meta property="og:image" content="https://i.ibb.co/2cRCQZS/logo-1285x670.jpg" />
+                <meta property="og:image" content="https://i.ibb.co/x7YYbNk/logo-1285x670.jpg" />
 
                 <link rel="icon" href="/favicon.ico" />
                 <link rel="apple-touch-icon" href="/logo_192x192.webp" />

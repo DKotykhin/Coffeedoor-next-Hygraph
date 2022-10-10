@@ -2,7 +2,8 @@
 # CoffeeDoor Brewbar & Coffee shop
 
 A brief description of what this project does and who it's for
-![Logo](https://i.ibb.co/2cRCQZS/logo-1285x670.jpg)
+
+![Logo](https://i.ibb.co/VxVb9gn/logo-700x191.webp)
 
 
 ## Features
