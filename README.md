@@ -16,6 +16,23 @@ A brief description of what this project does and who it's for
 - Three languages: ua, en, ru
 - Mobile friendly
 
+## Environment Variables
+
+To run this project, you will need to add the following environment variables to your .env file
+
+`TELEGRAM_TOKEN`
+
+`TELEGRAM_CHAT_ID`
+
+`NEXT_PUBLIC_HYGRAPH_URL`
+
+`NEXT_PUBLIC_GOOGLE_DATA_ID`
+
+## Deploy on Vercel
+
+  [https://coffeedoor-next-hygraph.vercel.app](https://coffeedoor-next-hygraph.vercel.app)
+
+  [https://luckycat.pp.ua](https://www.luckycat.pp.ua/)
 
 ## Run Locally
 
@@ -48,14 +65,6 @@ yarn
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 
-## Deploy on Vercel
-
-
-
-  [https://coffeedoor-next-hygraph.vercel.app](https://coffeedoor-next-hygraph.vercel.app)
-
-  [https://luckycat.pp.ua](https://www.luckycat.pp.ua/)
-
 
 ## Color Reference
 
@@ -65,21 +74,6 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 | Firm mint | ![#00a1b6](https://via.placeholder.com/10/00a1b6?text=+) #00a1b6 |
 | Firm brown | ![#683b39](https://via.placeholder.com/10/683b39?text=+) #683b39 |
 
-
-## Environment Variables
-
-To run this project, you will need to add the following environment variables to your .env file
-
-`TELEGRAM_TOKEN`
-
-`TELEGRAM_CHAT_ID`
-
-`NEXT_PUBLIC_HYGRAPH_URL`
-
-`NEXT_PUBLIC_GOOGLE_DATA_ID`
-
-
 ## Author
 
 - [@DKotykhin](https://github.com/DKotykhin)
-
