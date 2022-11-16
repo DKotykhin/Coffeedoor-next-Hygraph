@@ -11,6 +11,8 @@ import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import LocalShippingOutlinedIcon from "@mui/icons-material/LocalShippingOutlined";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 
+import { Phone } from "../footer/footerData";
+
 import styles from "./Infoblock.module.scss";
 
 const InfoBlock: React.FC = () => {
@@ -28,13 +30,13 @@ const InfoBlock: React.FC = () => {
                 <AccessTimeIcon className={styles.infoblock_icon} />
                 <ListItemText className={styles.infoblock_items}>
                     <Typography className={styles.infoblock_item_1}>
-                        {t("listtitle_1")}
+                        {t("openTimesTitle")}
                     </Typography>
                     <Typography className={styles.infoblock_item_2}>
-                        {t("listsubtitle_1_1")}
+                        {t("openTimes_1")}
                     </Typography>
                     <Typography className={styles.infoblock_item_2}>
-                        {t("listsubtitle_1_2")}
+                        {t("openTimes_2")}
                     </Typography>
                 </ListItemText>
             </ListItem>
@@ -42,10 +44,10 @@ const InfoBlock: React.FC = () => {
                 <LocalShippingOutlinedIcon className={styles.infoblock_icon} />
                 <ListItemText className={styles.infoblock_items}>
                     <Typography className={styles.infoblock_item_1}>
-                        {t("listtitle_2")}
+                        {t("deliveryTitle")}
                     </Typography>
                     <Typography className={styles.infoblock_item_2}>
-                        {t("listsubtitle_2_1")}
+                        {t("deliveryOptions")}
                     </Typography>
                 </ListItemText>
             </ListItem>
@@ -53,16 +55,17 @@ const InfoBlock: React.FC = () => {
                 <LocationOnOutlinedIcon className={styles.infoblock_icon} />
                 <ListItemText className={styles.infoblock_items}>
                     <Typography className={styles.infoblock_item_1}>
-                        {t("listtitle_3")}
+                        {t("contactsTitle")}
                     </Typography>
                     <Typography className={styles.infoblock_item_2}>
-                        {t("listsubtitle_3_1")}
+                        {t("address")}
                     </Typography>
                     <Link
                         className={styles.infoblock_item_3}
-                        href="tel:80997609883"
+                        href={Phone['href']}
                     >
-                        {t("listsubtitle_3_2")}
+                        {t("phone")}
+                        {Phone['phone']}
                     </Link>
                 </ListItemText>
             </ListItem>

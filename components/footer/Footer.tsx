@@ -36,7 +36,7 @@ const Footer: React.FC = () => {
                     sx={{ color: "#fff" }}
                     href={"mailto:" + Email['email']}
                 >
-                    {"e-mail: "}{Email['email']}
+                    {"e-mail: " + Email['email']}
                 </Link>
             </Box>
         </Box>
