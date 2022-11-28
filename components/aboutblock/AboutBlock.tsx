@@ -15,7 +15,7 @@ import DoneIcon from "@mui/icons-material/Done";
 
 import { motion } from "framer-motion";
 import classNames from "classnames";
-import { photoData } from "./photoData";
+import { photoData, IPhotoData } from "./photoData";
 
 import styles from "./Aboutblock.module.scss";
 
@@ -44,13 +44,6 @@ const theme = createTheme({
         fontWeightRegular: 300,
     },
 });
-
-interface IPhotoData {
-    img: string,
-    alt: string,
-    bigSize: boolean,
-    portrait: boolean
-}
 
 const AboutBlock: React.FC = () => {    
     let { t } = useTranslation("aboutblock");

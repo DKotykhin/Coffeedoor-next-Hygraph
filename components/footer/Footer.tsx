@@ -16,7 +16,7 @@ const Footer: React.FC = () => {
             <Box>
                 {
                     SocialMedias.map(socialMedia => (
-                        <Link href={socialMedia.href} key={socialMedia.id}>
+                        <Link href={socialMedia.href} key={socialMedia.id} target='_blank'>
                             <socialMedia.icon className={styles.footer_icon} />
                         </Link>
                     ))

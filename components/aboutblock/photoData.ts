@@ -1,4 +1,11 @@
-export const photoData = [{
+export interface IPhotoData {
+    img: string,
+    alt: string,
+    bigSize: boolean,
+    portrait: boolean
+}
+
+export const photoData: IPhotoData[] = [{
         img: "Coffeedoor_10.webp",
         alt: "Coffee",
         bigSize: true,

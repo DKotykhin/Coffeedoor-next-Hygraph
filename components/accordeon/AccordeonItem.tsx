@@ -1,13 +1,8 @@
 import useTranslation from "next-translate/useTranslation";
 import { Typography } from "@mui/material";
+import { IBody } from "../../types/menuType"
 
-interface IAccordeonItem {
-    name: string;
-    description?: string;
-    price: string
-}
-
-const AccordeonItem: React.FC<IAccordeonItem> = (item) => {
+const AccordeonItem: React.FC<IBody> = (item) => {
     let { t } = useTranslation("menutitle");
     return (
         <>

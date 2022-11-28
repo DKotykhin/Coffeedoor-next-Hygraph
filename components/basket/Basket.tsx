@@ -33,17 +33,17 @@ const Basket: React.FC = () => {
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
-    const handleRemove = (basketItem: string) => {
+    const handleRemove = (basketItem: string): void => {
         dispatch(basketRemoveItems(basketItem));
     };
-    const handleDecrement = (basketItem: string) => {
+    const handleDecrement = (basketItem: string): void => {
         dispatch(basketRemoveQuantity(basketItem));
     };
-    const handleIncrement = (basketItem: string) => {
+    const handleIncrement = (basketItem: string): void => {
         dispatch(basketAddQuantity(basketItem));
     };
 
-    const onSubmitForm = (formdata: IFormData) => {
+    const onSubmitForm = (formdata: IFormData): void => {
         const telegramData: ITelegramData = {
             formdata,
             basketdata
