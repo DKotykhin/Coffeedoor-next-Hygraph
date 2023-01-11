@@ -1,11 +1,11 @@
 @import '../../constants/constants.scss';
 .first_block {
-    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2)), url(../../public/background.webp) center center/cover no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2)), url(../../public/background/background.webp) center center/cover no-repeat;
     background-attachment: fixed;
     text-align: center;
     color: white;
     @media (max-width: 768px) {
-        background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2)), url(../../public/background_small.webp) center center/cover no-repeat;
+        background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2)), url(../../public/background/background_small.webp) center center/cover no-repeat;
         background-attachment: scroll;
     }
     .first_block {

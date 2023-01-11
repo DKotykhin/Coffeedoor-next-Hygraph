@@ -17,12 +17,12 @@ const MenuTitle: React.FC = () => {
             <Link href="/">
                 <Box className={styles.img}>
                     <Image
-                        src={"/logo_700x191.webp"}
+                        src={"/logo/logo_700x191.webp"}
                         alt="logo"
                         width={700}
                         height={191}
                         placeholder="blur"
-                        blurDataURL="/logo_700x191.webp"
+                        blurDataURL="/logo/logo_700x191.webp"
                     />
                 </Box>
             </Link>

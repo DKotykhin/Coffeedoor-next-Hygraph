@@ -19,34 +19,34 @@ const TRACKING_ID: any = process.env.NEXT_PUBLIC_GOOGLE_DATA_ID;
 const ga4react = new GA4React(TRACKING_ID);
 
 (async () => {
-  await ga4react.initialize()
-    .then(res => console.log("Analytics Success"))
-    .catch(err => console.log("Analytics Failure"))
+    await ga4react.initialize()
+        .then(res => console.log("Analytics Success"))
+        .catch(err => console.log("Analytics Failure"))
 })()
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const [loading, setLoading] = useState(true);
-  const router = useRouter();
+    const [loading, setLoading] = useState(true);
+    const router = useRouter();
 
-  useEffect(() => {
-    router.events.on("routeChangeStart", () => setLoading(false));
-    router.events.on("routeChangeComplete", () => setLoading(true));
-  }, [router]);
+    useEffect(() => {
+        router.events.on("routeChangeStart", () => setLoading(false));
+        router.events.on("routeChangeComplete", () => setLoading(true));
+    }, [router]);
 
-  return (
-    <>
-      {loading ? (
-        <Layout>
-          <Provider store={store}>
-            <Component {...pageProps} />
-          </Provider>
-        </Layout>
-      ) : (
-        <Spinner />
-      )}
-      <ToastContainer position="top-center" />
-    </>
-  );
+    return (
+        <>
+            {loading ? (
+                <Layout>
+                    <Provider store={store}>
+                        <Component {...pageProps} />
+                    </Provider>
+                </Layout>
+            ) : (
+                <Spinner />
+            )}
+            <ToastContainer position="top-center" />
+        </>
+    );
 }
 
 export default MyApp;

@@ -5,8 +5,8 @@ import useTranslation from "next-translate/useTranslation";
 import { Container, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 
-import styles from "./Thanksblock.module.scss";
 import ReturnButton from "../returnButton/ReturnButton";
+import styles from "./Thanksblock.module.scss";
 
 const ThanksBlock: React.FC = () => {
     let { t } = useTranslation("thanksblock");
@@ -16,12 +16,12 @@ const ThanksBlock: React.FC = () => {
             <Link href="/">
                 <Box className={styles.img}>
                     <Image
-                        src={"/logo_700x191.webp"}
+                        src={"/logo/logo_700x191.webp"}
                         alt="logo"
                         width={700}
                         height={191}
                         placeholder="blur"
-                        blurDataURL="/logo_700x191.webp"
+                        blurDataURL="/logo/logo_700x191.webp"
                     />
                 </Box>
             </Link>

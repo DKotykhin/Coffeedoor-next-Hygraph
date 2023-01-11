@@ -51,7 +51,7 @@ const Home: NextPage<ICatalog> = ({ cataloglist }) => {
                 <meta property="og:image" content="https://i.ibb.co/x7YYbNk/logo-1285x670.jpg" />
 
                 <link rel="icon" href="/favicon.ico" />
-                <link rel="apple-touch-icon" href="/logo_192x192.webp" />
+                <link rel="apple-touch-icon" href="/logo/logo_192x192.webp" />
             </Head>
             <ThemeProvider theme={theme}>
                 <NavDrawer />

@@ -60,7 +60,7 @@ const NavDrawer: React.FC = () => {
                 >
                     <List className={styles.list_items}>
                         <Image
-                            src={"/logo_256x256.ico"}
+                            src={"/logo/logo_256x256.webp"}
                             alt="logo"
                             width={100}
                             height={100}
