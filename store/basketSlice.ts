@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
-import { IBasket, IFormData } from "../types/basketType";
+import { IBasket, ITelegramData } from "../types/basketType";
 
 type BasketState = {
     basketdata: IBasket[];
@@ -8,11 +8,6 @@ type BasketState = {
 const initialState: BasketState = {
     basketdata: [],
 };
-
-interface ITelegramData {
-    formdata: IFormData;
-    basketdata: IBasket[];
-}
 
 export const sendDataToTelegram = createAsyncThunk<
     void,
