@@ -17,7 +17,7 @@ interface ICatalogCard {
     lang?: string
 }
 
-const CatalogCard: React.FC<ICatalogCard> = ({ item, lang }) => {    
+const CatalogCard: React.FC<ICatalogCard> = ({ item, lang }) => {
     const { id, bodyUa, bodyRu, bodyEn, price, weight, cardImg, order } = item.node;
     let body: IBody;
     switch (lang) {
@@ -80,14 +80,14 @@ const CatalogCard: React.FC<ICatalogCard> = ({ item, lang }) => {
                                 {t("order")}
                             </Typography>
                         )}
-                        <Typography color="text.secondary" sx={{pb:2}}>
+                        <Typography color="text.secondary" sx={{ pb: 2 }}>
                             {description}
                         </Typography>
                     </Box>
                     {sort && (
                         <Typography
                             variant="body2"
-                            color="text.secondary"                            
+                            color="text.secondary"
                         >
                             {sort.key}{": "}{sort.value}
                         </Typography>

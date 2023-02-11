@@ -30,28 +30,18 @@ const Home: NextPage<ICatalog> = ({ cataloglist }) => {
         <>
             <Head>
                 <title>
-                    {"CoffeeDoor - кав'ярня та магазин свіжообсмаженої кави"}
+                    CoffeeDoor - кав&apos;ярня та магазин свіжообсмаженої кави
                 </title>
-                <meta charSet="utf-8" />
-                <meta
-                    name="viewport"
-                    content="width=device-width, initial-scale=1"
-                />
-                <meta name="theme-color" content="#000000" />
                 <meta
                     name="description"
                     content="CoffeeDOOR – це кавовий бренд, який по'єднує в собі свіжообсмажену каву рівня Speciality, кращі кавові технології, стильний дизайнерський інтер'єр, швидкий і дружній сервіс"
                 />
                 <meta name="keywords" content="кава в зернах, кавомолка, кофе, кофемолка" />
-
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content="https://www.luckycat.pp.ua/" />
                 <meta property="og:title" content="CoffeeDoor - кав'ярня та магазин свіжообсмаженої кави" />
                 <meta property="og:description" content="CoffeeDOOR – це кавовий бренд, який по'єднує в собі свіжообсмажену каву рівня Speciality, кращі кавові технології, стильний дизайнерський інтер'єр, швидкий і дружній сервіс" />
                 <meta property="og:image" content="https://i.ibb.co/x7YYbNk/logo-1285x670.jpg" />
-
-                <link rel="icon" href="/favicon.ico" />
-                <link rel="apple-touch-icon" href="/logo/logo_192x192.webp" />
             </Head>
             <ThemeProvider theme={theme}>
                 <NavDrawer />
