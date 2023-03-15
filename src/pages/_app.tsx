@@ -15,7 +15,7 @@ import type { AppProps } from 'next/app';
 
 import "styles/globals.scss";
 
-const TRACKING_ID: any = process.env.NEXT_PUBLIC_GOOGLE_DATA_ID;
+const TRACKING_ID: string = process.env.NEXT_PUBLIC_GOOGLE_DATA_ID || "";
 const ga4react = new GA4React(TRACKING_ID);
 
 (async () => {

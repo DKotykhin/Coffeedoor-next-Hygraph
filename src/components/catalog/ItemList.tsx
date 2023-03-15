@@ -65,11 +65,11 @@ const ItemList: React.FC<IItemList> = ({
                 />
             )}
             {matches ?
-                list?.map((item) => (
-                    <Box key={item.node.id} sx={{ display: "inline-block" }}>
-                        <Card item={item} lang={router.locale} />
-                    </Box>
-                ))
+                <Box className={styles.item_list_card} >
+                    {list?.map((item) =>
+                        <Card key={item.node.id} item={item} lang={router.locale} />)}
+
+                </Box>
                 :
                 <Swiper
                     slidesPerView={1.2}

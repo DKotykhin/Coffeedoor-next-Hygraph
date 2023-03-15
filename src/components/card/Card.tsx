@@ -55,7 +55,7 @@ const CatalogCard: React.FC<ICatalogCard> = ({ item, lang }) => {
                 openModal={open}
                 closeModal={closeModal}
             />
-            <Card sx={{ maxWidth: 350 }} className={styles.catalog_item} raised>
+            <Card className={styles.catalog_item} raised>
                 <Image
                     src={cardImg?.url || `/wait_1.webp`}
                     loader={() => cardImg.url}
@@ -66,7 +66,7 @@ const CatalogCard: React.FC<ICatalogCard> = ({ item, lang }) => {
                     blurDataURL={cardImg.url}
                     placeholder={'blur'}
                 />
-                <CardContent>
+                <CardContent sx={{ flexGrow: 1 }}>
                     <Typography className={styles.catalog_item_name}>
                         {title} {name}
                     </Typography>

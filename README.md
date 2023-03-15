@@ -14,6 +14,7 @@ A brief description of what this project does and who it's for
 - Hygraph CMS for content placing
 - GraphQL
 - Three languages: ua, en, ru
+- Google Analitycs
 - Mobile friendly
 
 ## Environment Variables
