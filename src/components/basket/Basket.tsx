@@ -119,7 +119,7 @@ const Basket: React.FC = () => {
                                         {item.quantity * item.price}
                                         {t("currency")}
                                     </Typography>
-                                    <Divider sx={{ mt: 2 }} />
+                                    <Divider sx={{ mt: 1.5 }} />
                                 </Box>
                             ))
                         ) : (

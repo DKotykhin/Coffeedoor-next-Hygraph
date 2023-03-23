@@ -3,7 +3,6 @@
         padding: 20px;
         text-align: center;
         margin: 0 auto;
-        font-size: 40px;
         font-weight: 700;
         max-width: 500px;
         margin-top: 50px;
@@ -64,6 +63,11 @@
         }
         .infoblock_subtitle {
             font-size: 20px;
+        }
+    }
+    @media (max-width: 350px) {
+        .infoblock_title {
+            font-size: 25px;
         }
     }
 }

@@ -21,32 +21,34 @@
         font-size: 20px;
     }
     .item_list_quantity {
-        margin-top: 24px;
-        margin-bottom: 24px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        margin: 24px 0;
         font-size: 20px;
-    }
-    .item_list_remove,
-    .item_list_add {
-        color: $firm_mint;
-        font-size: 30px;
-        vertical-align: middle;
-        margin-right: 10px;
-        cursor: pointer;
-    }
-    .item_list_add {
-        margin-left: 10px;
-    }
-    .item_list_button {
-        @include button;
-        padding: 8px;
-        width: 150px;
-        margin-left: 20px;
-        color: white;
-        border: 1px solid $firm_mint;
-        background-color: $firm_mint;
-        &:hover {
-            color: black;
-            background-color: #fff;
+        .item_list_remove,
+        .item_list_add {
+            color: $firm_mint;
+            font-size: 30px;
+            vertical-align: middle;
+            margin-right: 10px;            
+            cursor: pointer;
+        }
+        .item_list_add {
+            margin: 0 20px 0 10px;
+        }
+        .item_list_button {
+            @include button;
+            padding: 8px;
+            width: 120px;
+            color: white;
+            border: 1px solid $firm_mint;
+            background-color: $firm_mint;
+            white-space: nowrap;
+            &:hover {
+                color: black;
+                background-color: #fff;
+            }
         }
     }
     .list div span {

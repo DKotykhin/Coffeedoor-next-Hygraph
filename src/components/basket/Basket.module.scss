@@ -26,7 +26,8 @@
     overflow-y: scroll;
     background-color: "background.paper";
     border: 2px solid #000;
-    padding: 24px;
+    border-radius: 10px;
+    padding: 32px;
     .modal_title {
         font-size: 22px;
         font-weight: 500;
@@ -42,11 +43,10 @@
         .modal_name {
             font-size: 19px;
             font-weight: 500;
-            margin-top: 16px;
-            margin-bottom: 8px;
+            margin: 16px 8px 8px 0;
         }
         .modal_icon {
-            margin-top: 20px;
+            margin-top: 18px;
             color: #808080;
             cursor: pointer;
             &:hover {
@@ -55,6 +55,7 @@
         }
     }
     .modal_price {
+        display: flex;
         .add_remove_icons {
             color: $firm_mint;
             vertical-align: bottom;
@@ -67,7 +68,7 @@
         font-size: 20px;
         font-weight: 500;
         text-align: right;
-        margin-top: 16px;
+        margin: 16px 0;
     }
     .buy_button {
         @include button;
@@ -86,8 +87,9 @@
     }
     .modal_close {
         position: absolute;
-        top: 25px;
-        right: 25px;
+        top: 20px;
+        right: 20px;
+        font-size: 2rem;
         color: #808080;
         cursor: pointer;
         &:hover {

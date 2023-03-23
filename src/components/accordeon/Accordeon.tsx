@@ -66,22 +66,20 @@ const Accordeon: React.FC<IAccordeon> = ({ menulist }) => {
                     onChange={handleChange(`panel${i}`)}
                 >
                     <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                        <Typography sx={{ fontWeight: 700, fontSize: 22 }}>
-                            {router.locale === 'ua' ? item.node.ua.title : null}
-                            {router.locale === 'en' ? item.node.en.title : null}
-                            {router.locale === 'ru' ? item.node.ru.title : null}
+                        <Typography sx={{ fontWeight: 700, fontSize: 22, mr: 2 }}>
+                            {router.locale === 'ua'
+                                ? item.node.ua.title
+                                : router.locale === 'en'
+                                    ? item.node.en.title
+                                    : item.node.ru.title}
                         </Typography>
                     </AccordionSummary>
-
-                    {router.locale === 'ua' &&                        
-                        <AccordeonBlock blockItem={item.node.ua}/>
-                    }
-                    {router.locale === 'en' &&                       
-                        <AccordeonBlock blockItem={item.node.en}/>
-                    }
-                    {router.locale === 'ru' &&                        
-                        <AccordeonBlock blockItem={item.node.ru}/>
-                    }
+                    <AccordeonBlock blockItem={router.locale === 'ua'
+                        ? item.node.ua
+                        : router.locale === 'en'
+                            ? item.node.en
+                            : item.node.ru}
+                    />
                 </Accordion>
             ))}
         </Container>
