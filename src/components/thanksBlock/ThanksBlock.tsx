@@ -14,7 +14,7 @@ const ThanksBlock: React.FC = () => {
     return (
         <Container maxWidth="md" className={styles.thanks_block}>
             <Link href="/">
-                <Box className={styles.img}>
+                <Box className={styles.thanks_img}>
                     <Image
                         src={"/logo/logo_700x191.webp"}
                         alt="logo"

@@ -1,16 +1,15 @@
 .thanks_block {
     display: block;
     text-align: center;
-    margin: 0 auto;
-    .img {
-        margin: 50px auto;
+    .thanks_img {
+        margin: 100px auto;
         width: 80%;
         cursor: pointer;
     }
     .thanks_title {
         font-size: 30px;
         font-weight: 500;
-        margin-bottom: 50px;
+        margin-bottom: 30px;
         @media (max-width: 768px) {
             font-size: 20px;
         }

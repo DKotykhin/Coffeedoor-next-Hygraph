@@ -1,14 +1,14 @@
 @import 'constants/constants.scss';
-.title_block {
+
+.menu_block {
     display: block;
     text-align: center;
-    margin: 0 auto;
-    .img {
+    .menu_img {
         margin: 50px auto;
         width: 80%;
         cursor: pointer;
     }
-    .title {
+    .menu_title {
         margin-top: 30px;
         font-size: 40px;
         font-weight: 700;
@@ -16,7 +16,7 @@
             font-size: 30px;
         }
     }
-    .subtitle {
+    .menu_subtitle {
         margin-top: 20px;
         font-size: 25px;
         font-weight: 300;
@@ -29,18 +29,18 @@
         display: inline;
         padding: 2px 14px 4px 14px;
         margin: 0 15px;
-        border: 1px solid black;
-        color: black;
+        border: 1px solid #000;
+        color: #000;
         text-decoration: none;
         &:hover {
             background-color: $firm_mint;
-            color: white;
+            color: #fff;
             border: 1px solid $firm_mint;
         }
     }
     .lang_active {
         background-color: $firm_mint;
-        color: white;
+        color: #fff;
         border: 1px solid $firm_mint;
     }
 }

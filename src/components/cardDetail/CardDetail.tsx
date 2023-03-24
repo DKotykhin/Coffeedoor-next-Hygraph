@@ -1,6 +1,6 @@
 import useTranslation from "next-translate/useTranslation";
 
-import { Backdrop, Box, Modal, Fade, Typography } from "@mui/material";
+import { Box, Modal, Fade, Typography } from "@mui/material";
 import { ListItem, List, ListItemIcon, Link } from "@mui/material";
 import DoneIcon from "@mui/icons-material/Done";
 import CloseIcon from "@mui/icons-material/Close";
@@ -49,10 +49,6 @@ const CardDetail: React.FC<ICardDetail> = ({
             open={openModal}
             onClose={handleClose}
             closeAfterTransition
-            BackdropComponent={Backdrop}
-            BackdropProps={{
-                timeout: 500,
-            }}
         >
             <Fade in={openModal}>
                 <Box sx={{ bgcolor: "background.paper", boxShadow: 24 }} className={styles.item_list}>
@@ -61,7 +57,7 @@ const CardDetail: React.FC<ICardDetail> = ({
                         onClick={handleClose}
                     />
                     <DetailSwipeImage img={listImg} alt={name} />
-                    <Typography sx={{ mt: 2 }} variant="h6" component="h2">
+                    <Typography sx={listImg.length > 1 ? { mt: 3 } : { mt: 2 }} variant="h6" component="h2">
                         {title} {name}
                     </Typography>
                     <Typography className={styles.item_list_price}>

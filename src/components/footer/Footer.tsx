@@ -26,16 +26,13 @@ const Footer: React.FC = () => {
                 {t("address")}
             </Typography>
             <Box className={styles.footer_item}>
-                <Link sx={{ color: "#fff" }} href={Phone['href']}>
+                <Link href={Phone['href']}>
                     {t("phone")}
                     {Phone['phone']}
                 </Link>
             </Box>
             <Box className={styles.footer_item}>
-                <Link
-                    sx={{ color: "#fff" }}
-                    href={"mailto:" + Email['email']}
-                >
+                <Link href={"mailto:" + Email['email']}>
                     {"e-mail: " + Email['email']}
                 </Link>
             </Box>

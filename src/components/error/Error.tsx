@@ -6,6 +6,7 @@ import { Typography } from "@mui/material";
 import { Box } from "@mui/system";
 
 import styles from "./error.module.scss";
+import ReturnButton from "components/returnButton/ReturnButton";
 
 const Error: React.FC = () => {
     return (
@@ -21,11 +22,7 @@ const Error: React.FC = () => {
             <Typography className={styles.error_title}>
                 Сторінка не знайдена
             </Typography>
-            <Link href="/">
-                <Typography className={styles.error_link}>
-                    Повернутися на головну
-                </Typography>
-            </Link>
+            <ReturnButton />
         </Box>
     );
 };

@@ -13,9 +13,9 @@ const MenuTitle: React.FC = () => {
     let { t } = useTranslation("menutitle");
 
     return (
-        <Container maxWidth="md" className={styles.title_block}>
+        <Container maxWidth="md" className={styles.menu_block}>
             <Link href="/">
-                <Box className={styles.img}>
+                <Box className={styles.menu_img}>
                     <Image
                         src={"/logo/logo_700x191.webp"}
                         alt="logo"
@@ -40,10 +40,10 @@ const MenuTitle: React.FC = () => {
                     </Box>
                 </Link>
             ))}
-            <Typography className={styles.title} component="h2">
+            <Typography className={styles.menu_title} component="h2">
                 {t("title")}
             </Typography>
-            <Typography className={styles.subtitle} component="h3">
+            <Typography className={styles.menu_subtitle} component="h3">
                 {t("subtitle")}
             </Typography>
         </Container>

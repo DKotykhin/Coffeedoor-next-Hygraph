@@ -1,13 +1,14 @@
 @import 'constants/constants.scss';
+
 .drawer .drawer_icon {
     position: fixed;
     right: 30px;
     top: 20px;
-    color: rgb(160, 160, 160);
+    color: #a0a0a0;
     font-size: 50px;
     font-weight: 700;
     padding: 8px;
-    border: 2px solid rgb(160, 160, 160);
+    border: 2px solid #a0a0a0;
     border-radius: 50%;
     z-index: 5;
     cursor: pointer;
@@ -18,11 +19,11 @@
         padding: 20px;
         font-size: 20px;
         &_item {
-            color: black;
+            color: #000;
             text-decoration: none;
             padding: 8px;
             &:hover {
-                color: grey;
+                color: #808080;
             }
         }
         &img {
@@ -36,12 +37,12 @@
     .link_button {
         @include button;
         padding: 15px 30px;
-        border: 1px solid black;
-        color: black;
+        border: 1px solid #000;
+        color: #000;
         text-decoration: none;
         &:hover {
             background-color: $firm_mint;
-            color: white;
+            color: #fff;
             border: 1px solid $firm_mint;
         }
     }
@@ -50,18 +51,18 @@
         display: inline;
         padding: 1px 14px 4px 14px;
         margin-left: 18px;
-        border: 1px solid black;
-        color: black;
+        border: 1px solid #000;
+        color: #000;
         text-decoration: none;
         &:hover {
             background-color: $firm_mint;
-            color: white;
+            color: #fff;
             border: 1px solid $firm_mint;
         }
     }
     .lang_active {
         background-color: $firm_mint;
-        color: white;
+        color: #fff;
         border: 1px solid $firm_mint;
     }
 }
